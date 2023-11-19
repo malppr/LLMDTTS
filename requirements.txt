@@ -10,3 +10,8 @@ pycwt
 tqdm
 PyYAML
 g2p-en==2.1.0
+<<<<<<< HEAD
+=======
+tgt
+descript-audio-codec
+>>>>>>> a67eeaf9d093c64af59cd23f06aaf1a2e323e831
