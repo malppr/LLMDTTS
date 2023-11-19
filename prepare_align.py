@@ -22,7 +22,7 @@ def prepare_align(config):
             # base_name = txt_name.split(".")[0]
             # base_name_out = base_name.replace('_', '-')
             for i, txt_name in enumerate(tqdm(glob.glob(os.path.join(txt_dir,speaker,chapter_name,"*normalized.txt")))):
-                base_name = txt_name.split("\\")[-1]
+                base_name = txt_name.split("/")[-1]
                 base_name = base_name.split(".")[0]
                 with open(txt_name, "r") as f:
                     text = f.readline().strip("\n")

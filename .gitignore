@@ -117,3 +117,4 @@ data/*
 testing/*
 store/*
 /.conda
+config/*

@@ -52,7 +52,7 @@ class Preprocessor:
         self.text_grid_dir = self.preprocess_config["path"]["text_grid_dir"]
         self.save_dir = self.preprocess_config["path"]["save_dir"]
 
-        self.save_dir = os.path.join(self.save_dir,dataset)
+        # self.save_dir = os.path.join(self.save_dir,dataset)
         self.save_mels = os.path.join(self.save_dir,"mels")
         self.save_wavs = os.path.join(self.save_dir,"wavs")
         self.save_codecs = os.path.join(self.save_dir,"codecs")
@@ -351,11 +351,13 @@ class Preprocessor:
 
             return (sum(duration),(speaker, basename,raw_text,input_text, output_text, mels,codecs))
         else:
+            # print("No TextGrid")
             return (duration,None)
 
     #process all data for particular dataset
     def preprocess(self):
         in_sub_dirs = [p for p in os.listdir(self.in_dir) if os.path.isdir(os.path.join(self.in_dir, p))]
+        # print(in_sub_dirs)
         save_file = []
         save_count = 0
         total_duration = 0
@@ -411,15 +413,15 @@ class Preprocessor:
 
 
 
-                        save_count += 1
+                        # save_count += 1
 
-                        #Save a few for testing
-                        if save_count >= 2:
-                            break
+                        # #Save a few for testing
+                        # if save_count >= 2:
+                        #     break
 
-            #Save a few for testing
-            if save_count >= 2:
-                        break
+            # #Save a few for testing
+            # if save_count >= 2:
+            #             break
 
         with open(os.path.join(self.save_dir,"dataset.txt"), "w") as f:
             for word in save_file:
